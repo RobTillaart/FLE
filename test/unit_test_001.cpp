@@ -68,8 +68,8 @@ unittest(test_constructor)
   assertEqualFloat(0.0, PIE.error(), 0.001);
 
   FLE PIEP(22.0 / 7.0, PI - 22.0 / 7.0);
-  assertEqualFloat(22/7.0, PIEP.value(), 0.001);
-  assertEqualFloat(0.0, PIEP.error(), 0.001);
+  assertEqualFloat(PI, PIEP.value(), 0.01);
+  assertEqualFloat(0.0, PIEP.error(), 0.01);
 
   FLE PIEQ(355.0 / 113.0, PI - 355.0 / 113.0);
   assertEqualFloat(355.0/113.0, PIEQ.value(), 0.001);
