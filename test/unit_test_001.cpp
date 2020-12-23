@@ -72,7 +72,7 @@ unittest(test_constructor)
   assertEqualFloat(0.0, PIEP.error(), 0.01);
 
   FLE PIEQ(355.0 / 113.0, PI - 355.0 / 113.0);
-  assertEqualFloat(355.0/113.0, PIEQ.value(), 0.001);
+  assertEqualFloat(PI, PIEQ.value(), 0.001);
   assertEqualFloat(0.0, PIEQ.error(), 0.001);
 
   FLE EE(EULER);
