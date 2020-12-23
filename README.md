@@ -1,3 +1,8 @@
+
+[![Arduino CI](https://github.com/RobTillaart/FLE/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/FLE/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/RobTillaart/FLE.svg?maxAge=3600)](https://github.com/RobTillaart/FLE/releases)
+
 # FLE
 
 Arduino library for Arduino library for float with error datatype

@@ -2,10 +2,14 @@
 //    FILE: FLE.cpp
 //  AUTHOR: Rob Tillaart
 //    DATE: 2020-07-21
-// VERSION: 0.0.1
+// VERSION: 0.1.0
 // PURPOSE: Arduino library for float with error datatype
 //     URL: https://github.com/RobTillaart/FLE
 //
+//  HISTORY
+//  0.0.1  2020-07-21  initial version
+//  0.1.0  2020-12-23  arduino-CI + unit tests
+
 
 #include "FLE.h"
 
