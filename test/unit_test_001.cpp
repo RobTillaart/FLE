@@ -344,7 +344,8 @@ unittest(test_bool)
   FLE a(2, 0.1);
   FLE b(3, 0.1);
   FLE c(3, 0.1);
-  
+  FLE d(3, 1.0);
+
   assertFalse(a == b);
   assertFalse(b == a);
   assertTrue(b == c);
@@ -356,6 +357,16 @@ unittest(test_bool)
   assertFalse(b != c);
   assertFalse(c != b);
   assertFalse(a != a);
+
+  assertTrue(c >= a);
+  assertTrue(c > a);
+  assertTrue(a <= c);
+  assertTrue(a < c);
+
+  assertFalse(d > a);
+  assertFalse(d >= a);
+  assertFalse(a < d);
+  assertFalse(d <= d);
 }
 
 

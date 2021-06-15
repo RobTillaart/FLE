@@ -122,13 +122,30 @@ bool FLE::operator == (const FLE &in)
   return ((_v == in._v) && (_e == in._e));
 }
 
-
 bool FLE::operator != (const FLE &in)
 {
   return ((_v != in._v) || (_e != in._e));
 }
 
+bool FLE::operator >= (const FLE &in)
+{
+  return low() >= in.high();
+}
 
+bool FLE::operator > (const FLE &in)
+{
+  return low() > in.high();
+}
+
+bool FLE::operator <= (const FLE &in)
+{
+  return high() >= in.low();
+}
+
+bool FLE::operator < (const FLE &in)
+{
+  return high() < in.low();
+}
 
 
 /////////////////////////////////////////////////
@@ -145,7 +162,7 @@ bool FLE::peq(const FLE &in)
 
 bool FLE::in(FLE a)
 {
-  return ( a.low() <= low() && high <= a.high());
+  return ( a.low() <= low() && high() <= a.high());
 }
 
 

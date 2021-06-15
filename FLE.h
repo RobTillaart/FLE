@@ -52,16 +52,11 @@ class FLE: public Printable
   bool operator == (const FLE&);
   bool operator != (const FLE&);
 
-  //  what does it mean
-  //  for all value pairs of a and b  a >= b
-  //  a.low >= b.high
-  //  strong statement.
-  //  bool operator >= (const FLE&);
-
-  //  idem
-  //  bool operator >  (const FLE&);
-  //  bool operator <= (const FLE&);
-  //  bool operator < (const FLE&);
+  //  for all value pairs of a and b    a >= b
+  bool operator >= (const FLE&);
+  bool operator >  (const FLE&);
+  bool operator <= (const FLE&);
+  bool operator <  (const FLE&);
 
 
 
@@ -80,6 +75,7 @@ class FLE: public Printable
   // bool operator ple (const FLE&);  // possible less equal
   // bool operator pgt (const FLE&);  // possible greater than
   // bool operator pge (const FLE&);  // possible greater equal
+
 
 
   // SET LIKE MATH
