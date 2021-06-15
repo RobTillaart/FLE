@@ -144,10 +144,10 @@ bool FLE::operator ~= (const FLE &in)
 
 
 
-// bool FLE::in(FLE a)
-// {
-//   return ( a.low() <= low() && high <= a.high());
-// }
+bool FLE::in(FLE a)
+{
+  return ( a.low() <= low() && high <= a.high());
+}
 
 
 
