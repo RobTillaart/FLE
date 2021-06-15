@@ -67,7 +67,7 @@ class FLE: public Printable
   // there are possible values of a larger than b
 
   // investigate set like math.
-  FLE both(FLE a, FLE b);    // overlap.
+  // FLE both(FLE a, FLE b);    // overlap.
   // FLE sub(FLE a, FLE b);     // part of a lower than b;
   // FLE sup(FLE a, FLE b);     // part of a higher than b;
   //
