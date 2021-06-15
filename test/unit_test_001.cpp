@@ -386,8 +386,8 @@ unittest(test_experimental)
   assertTrue(b.peq(c));
   assertTrue(c.peq(b));
 
-  assetFalse(c.peq(a));
-  assetFalse(a.peq(c));
+  assertFalse(c.peq(a));
+  assertFalse(a.peq(c));
 }
 
 
