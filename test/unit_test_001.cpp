@@ -339,6 +339,20 @@ unittest(test_basic_math_with_error_II)
 }
 
 
+unittest(test_bool)
+{
+  FLE a(2, 0.1);
+  FLE b(3, 0.1);
+  FLE c(3, 0.1);
+  
+  assertFalse(a == b);
+  assertFalse(b == a);
+  assertTrue(b == c);
+  assertTrue(c == b);
+}
+
+
+
 unittest_main()
 
 // --------

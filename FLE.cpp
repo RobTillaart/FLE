@@ -36,16 +36,22 @@ size_t FLE::printTo(Print& p) const
   return n;
 }
 
+
+/////////////////////////////////////////////////
+//
+// MATH OPERATORS
+//
+
 // NEGATION
 FLE FLE::operator - ()
 {
-  return FLE(_v - in._v, _e + in._e);
+  return FLE(-_v, _e);
 }
 
 
 FLE FLE::operator + (const FLE &in)
 {
-  return FLE(-_v, _e);
+  return FLE(_v + in._v, _e + in._e);
 }
 
 
@@ -104,6 +110,23 @@ FLE FLE::operator /= (const FLE &in)
   _e =  sum * _v;
   return *this;
 }
+
+
+/////////////////////////////////////////////////
+//
+// BOOL OPERATORS
+//
+bool FLE::operator == (const FLE &in)
+{
+  if (_v != in._v) return false;
+  if (_e != in._e) return false;
+  return true;
+}
+
+
+
+
+
 
 
 // -- END OF FILE --
