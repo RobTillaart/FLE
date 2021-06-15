@@ -358,12 +358,12 @@ unittest(test_bool)
   assertFalse(c != b);
   assertFalse(a != a);
 
-  assertTrue(a >= a);
+  assertTrue(a >= a);       // <<<<<<<<<<
   assertTrue(c >= a);
   assertTrue(c > a);
 
   assertTrue(a <= a);
-  assertTrue(a <= c);
+  assertTrue(a <= c);        //  <<<<<<<<<<<<<<<
   assertTrue(a < c);
 
   assertFalse(d > d);
@@ -372,7 +372,7 @@ unittest(test_bool)
 
   assertFalse(a < a);
   assertFalse(a < d);
-  assertFalse(d <= a);
+  assertFalse(d <= a);       //   <<<<<<<<<<<<<<
 }
 
 
