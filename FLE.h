@@ -49,8 +49,8 @@ class FLE: public Printable
 
 
   // BOOL OPERATORS
-  // FLE operator == (const FLE&);
-  // FLE operator != (const FLE&);
+  FLE operator == (const FLE&);
+  FLE operator != (const FLE&);
   // FLE operator >= (const FLE&);
   // FLE operator >  (const FLE&);
   // FLE operator <= (const FLE&);
@@ -58,13 +58,16 @@ class FLE: public Printable
 
 
   // BOOL OPERATIONS fuzzy ones.
-  // FLE operator ~= (const FLE&);  // possible equal
-  // FLE operator ~< (const FLE&);  // possible smaller
-  // FLE operator ~> (const FLE&);  // possible larger
+  // FLE operator ~= (const FLE&);  // possible equal 
 
+  // FLE operator ~< (const FLE&);  // possible smaller
+  // there are possible values of a smaller than b
+
+  // FLE operator ~> (const FLE&);  // possible larger
+  // there are possible values of a larger than b
 
   // investigate set like math.
-  // FLE both(FLE a, FLE b);    // overlap.
+  FLE both(FLE a, FLE b);    // overlap.
   // FLE sub(FLE a, FLE b);     // part of a lower than b;
   // FLE sup(FLE a, FLE b);     // part of a higher than b;
   //

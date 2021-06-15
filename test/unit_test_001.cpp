@@ -349,6 +349,11 @@ unittest(test_bool)
   assertFalse(b == a);
   assertTrue(b == c);
   assertTrue(c == b);
+
+  assertTrue(a != b);
+  assertTrue(b != a);
+  assertFalse(b != c);
+  assertFalse(c != b);
 }
 
 

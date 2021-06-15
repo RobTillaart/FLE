@@ -124,7 +124,24 @@ bool FLE::operator == (const FLE &in)
 }
 
 
+bool FLE::operator != (const FLE &in)
+{
+  if (_v != in._v) return true;
+  if (_e != in._e) return true;
+  return false;
+}
 
+
+/////////////////////////////////////////////////
+//
+// EXPERIMENTAL
+//
+FLE FLE::both(FLE a, FLE b)
+{
+  // put a.low() a.high b low bhigh in array
+  // sort them and take the middle 2
+  return c();
+}
 
 
 
