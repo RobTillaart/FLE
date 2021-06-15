@@ -119,13 +119,13 @@ FLE FLE::operator /= (const FLE &in)
 //
 bool FLE::operator == (const FLE &in)
 {
-  return ((_v == in._v) && (_e == in_e));
+  return ((_v == in._v) && (_e == in._e));
 }
 
 
 bool FLE::operator != (const FLE &in)
 {
-  return ((_v != in._v) || (_e != in_e));
+  return ((_v != in._v) || (_e != in._e));
 }
 
 
