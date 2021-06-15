@@ -138,8 +138,8 @@ bool FLE::operator != (const FLE &in)
 //
 FLE FLE::both(FLE a, FLE b)
 {
-  // put a.low() a.high b low bhigh in array
-  // sort them and take the middle 2
+  // put a.low() a.high b low b high in array
+  // sort them and take the middle 2 
   return c();
 }
 

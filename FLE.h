@@ -49,8 +49,8 @@ class FLE: public Printable
 
 
   // BOOL OPERATORS
-  FLE operator == (const FLE&);
-  FLE operator != (const FLE&);
+  bool operator == (const FLE&);
+  bool operator != (const FLE&);
   // FLE operator >= (const FLE&);
   // FLE operator >  (const FLE&);
   // FLE operator <= (const FLE&);
