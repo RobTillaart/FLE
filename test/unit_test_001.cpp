@@ -37,19 +37,6 @@ unittest_teardown()
 {
 }
 
-/*
-unittest(test_new_operator)
-{
-  assertEqualINF(exp(800));
-  assertEqualINF(0.0/0.0);
-  assertEqualINF(42);
-  
-  assertEqualNAN(INFINITY - INFINITY);
-  assertEqualNAN(0.0/0.0);
-  assertEqualNAN(42);
-}
-*/
-
 
 unittest(test_constructor)
 {
@@ -87,9 +74,97 @@ unittest(test_constructor)
 }
 
 
-unittest(test_basic_math)
+unittest(test_basic_math_zero_error)
 {
+  FLE a(2);
+  FLE b(3);
 
+  FLE c = a;
+  assertEqualFloat(2, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = b;
+  assertEqualFloat(3, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = a + b;
+  assertEqualFloat(5, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = b + a;
+  assertEqualFloat(5, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = a - b;
+  assertEqualFloat(-1, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = b - a;
+  assertEqualFloat(1, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = a * b;
+  assertEqualFloat(6, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = b * a;
+  assertEqualFloat(6, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = a / b;
+  assertEqualFloat(0.666666, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = b / a;
+  assertEqualFloat(1.5, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+}
+
+
+unittest(test_basic_math_with_error)
+{
+  FLE a(2, 0.1);
+  FLE b(3, 0.1);
+
+  FLE c = a;
+  assertEqualFloat(2.0, c.value(), 0.001);
+  assertEqualFloat(0.1, c.error(), 0.001);
+
+  c = b;
+  assertEqualFloat(3.0, c.value(), 0.001);
+  assertEqualFloat(0.1, c.error(), 0.001);
+
+  c = a + b;
+  assertEqualFloat(5.0, c.value(), 0.001);
+  assertEqualFloat(0.2, c.error(), 0.001);
+
+  c = b + a;
+  assertEqualFloat(5.0, c.value(), 0.001);
+  assertEqualFloat(0.2, c.error(), 0.001);
+
+  c = a - b;
+  assertEqualFloat(-1.0, c.value(), 0.001);
+  assertEqualFloat(0.2, c.error(), 0.001);
+
+  c = b - a;
+  assertEqualFloat(1.0, c.value(), 0.001);
+  assertEqualFloat(0.2, c.error(), 0.001);
+
+  c = a * b;
+  assertEqualFloat(6.0, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = b * a;
+  assertEqualFloat(6.0, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = a / b;
+  assertEqualFloat(0.666666, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
+
+  c = b / a;
+  assertEqualFloat(1.5, c.value(), 0.001);
+  assertEqualFloat(0, c.error(), 0.001);
 }
 
 
