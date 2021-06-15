@@ -3,7 +3,7 @@
 //    FILE: FLE.h
 //  AUTHOR: Rob Tillaart
 //    DATE: 2020-07-21
-// VERSION: 0.1.1
+// VERSION: 0.1.2
 // PURPOSE: Arduino library for float with error datatype
 //     URL: https://github.com/RobTillaart/FLE
 //
@@ -14,7 +14,7 @@
 #include "Arduino.h"
 #include "math.h"
 
-#define FLE_LIB_VERSION      (F("0.1.1"))
+#define FLE_LIB_VERSION      (F("0.1.2"))
 
 
 class FLE: public Printable
@@ -36,8 +36,10 @@ class FLE: public Printable
   float low()      const{ return _v - _e; };
 
   // MATH OPERATORS
+  FLE operator -  ();  // negation  c = -a;
+
   FLE operator +  (const FLE&);
-  FLE operator -  (const FLE&);
+  FLE operator -  (const FLE&);  // minus  c = a - b;
   FLE operator *  (const FLE&);
   FLE operator /  (const FLE&);
   FLE operator += (const FLE&);
@@ -45,13 +47,36 @@ class FLE: public Printable
   FLE operator *= (const FLE&);
   FLE operator /= (const FLE&);
 
+
   // BOOL OPERATORS
+  // FLE operator == (const FLE&);
+  // FLE operator != (const FLE&);
+  // FLE operator >= (const FLE&);
+  // FLE operator >  (const FLE&);
+  // FLE operator <= (const FLE&);
+  // FLE operator < (const FLE&);
+
+
+  // BOOL OPERATIONS fuzzy ones.
+  // FLE operator ~= (const FLE&);  // possible equal
+  // FLE operator ~< (const FLE&);  // possible smaller
+  // FLE operator ~> (const FLE&);  // possible larger
+
+
+  // investigate set like math.
+  // FLE both(FLE a, FLE b);    // overlap.
+  // FLE sub(FLE a, FLE b);     // part of a lower than b;
+  // FLE sup(FLE a, FLE b);     // part of a higher than b;
+  //
+  // infinite
+  // NAN
+
 
   private:
   float   _v;
   float   _e;
   uint8_t _decimals = 2;
-  char    _sep = '±';
+  char    _sep = '~';   //  _sep = '±';  // gives warning.
 };
 
 

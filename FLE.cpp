@@ -2,7 +2,7 @@
 //    FILE: FLE.cpp
 //  AUTHOR: Rob Tillaart
 //    DATE: 2020-07-21
-// VERSION: 0.1.1
+// VERSION: 0.1.2
 // PURPOSE: Arduino library for float with error datatype
 //     URL: https://github.com/RobTillaart/FLE
 //
@@ -10,10 +10,8 @@
 //  0.0.1  2020-07-21  initial version
 //  0.1.0  2020-12-23  arduino-CI + unit tests
 //  0.1.1  2021-05-27  fix arduino-lint
+//  0.1.2  2021-06-15  add negation + unit tests
 
-
-// TODO - initial implementation.
-// TODO - test with negative values
 
 
 #include "FLE.h"
@@ -38,13 +36,20 @@ size_t FLE::printTo(Print& p) const
   return n;
 }
 
-
-FLE FLE::operator + (const FLE &in)
+// NEGATION
+FLE FLE::operator - ()
 {
-  return FLE(_v + in._v, _e + in._e);
+  return FLE(_v - in._v, _e + in._e);
 }
 
 
+FLE FLE::operator + (const FLE &in)
+{
+  return FLE(-_v, _e);
+}
+
+
+// SUBTRACT
 FLE FLE::operator - (const FLE &in)
 {
   return FLE(_v - in._v, _e + in._e);
