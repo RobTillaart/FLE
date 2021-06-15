@@ -317,7 +317,7 @@ unittest(test_basic_math_with_error_II)
   c *= b;
   assertEqualFloat(6.0, c.value(), 0.001);
   assertEqualFloat(0.5, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0833333, c.relError(), 0.001);
 
   c = b;
   c *= a;
