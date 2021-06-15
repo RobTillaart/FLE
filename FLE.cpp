@@ -135,13 +135,12 @@ bool FLE::operator != (const FLE &in)
 //
 // EXPERIMENTAL
 //
-bool FLE::operator ~= (const FLE &in)
+bool FLE::peq(const FLE &in)
 {
   if (in.low() <= low() && in.high() >= low() ) return true;
   if (low() <= in.low() && high() >= in.low() ) return true;
   return false;
 }
-
 
 
 bool FLE::in(FLE a)

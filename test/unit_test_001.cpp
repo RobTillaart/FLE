@@ -349,11 +349,34 @@ unittest(test_bool)
   assertFalse(b == a);
   assertTrue(b == c);
   assertTrue(c == b);
+  assertTrue(a == a);
 
   assertTrue(a != b);
   assertTrue(b != a);
   assertFalse(b != c);
   assertFalse(c != b);
+  assertFalse(a != a);
+}
+
+
+unittest(test_experimental)
+{
+  FLE a(2, 0.1);
+  FLE b(3, 0.9);
+  FLE c(3, 0.1);
+
+  assertFalse(a.in(b));
+  assertFalse(b.in(a));
+  assertFalse(b.in(c));
+  assertTrue(c.in(b));
+
+  assertTrue(a.peq(a));
+  assertTrue(a.peq(b));
+  assertTrue(b.peq(c));
+  assertTrue(c.peq(b));
+
+  assetFalse(c.peq(a));
+  assetFalse(a.peq(c));
 }
 
 
