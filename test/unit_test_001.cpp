@@ -230,57 +230,57 @@ unittest(test_basic_math_with_error_I)
   FLE c = a;
   assertEqualFloat(2.0, c.value(), 0.001);
   assertEqualFloat(0.1, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.05, c.relError(), 0.001);
 
   c = b;
   assertEqualFloat(3.0, c.value(), 0.001);
   assertEqualFloat(0.1, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0333333, c.relError(), 0.001);
 
   c = -b;
   assertEqualFloat(-3, c.value(), 0.001);
   assertEqualFloat(0.1, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0333333, c.relError(), 0.001);
 
   c = a + b;
   assertEqualFloat(5.0, c.value(), 0.001);
   assertEqualFloat(0.2, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.04, c.relError(), 0.001);
 
   c = b + a;
   assertEqualFloat(5.0, c.value(), 0.001);
   assertEqualFloat(0.2, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.04, c.relError(), 0.001);
 
   c = a - b;
   assertEqualFloat(-1.0, c.value(), 0.001);
   assertEqualFloat(0.2, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.2, c.relError(), 0.001);
 
   c = b - a;
   assertEqualFloat(1.0, c.value(), 0.001);
   assertEqualFloat(0.2, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.2, c.relError(), 0.001);
 
   c = a * b;
   assertEqualFloat(6.0, c.value(), 0.001);
   assertEqualFloat(0.5, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0833333, c.relError(), 0.001);
 
   c = b * a;
   assertEqualFloat(6.0, c.value(), 0.001);
   assertEqualFloat(0.5, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0833333, c.relError(), 0.001);
 
   c = a / b;
   assertEqualFloat(0.666666, c.value(), 0.001);
   assertEqualFloat(0.0555, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0833333, c.relError(), 0.001);
 
   c = b / a;
   assertEqualFloat(1.5, c.value(), 0.001);
   assertEqualFloat(0.125, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0833333, c.relError(), 0.001);
 }
 
 
@@ -293,25 +293,25 @@ unittest(test_basic_math_with_error_II)
   c += b;
   assertEqualFloat(5.0, c.value(), 0.001);
   assertEqualFloat(0.2, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.04, c.relError(), 0.001);
 
   c = b;
   c += a;
   assertEqualFloat(5.0, c.value(), 0.001);
   assertEqualFloat(0.2, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.04, c.relError(), 0.001);
 
   c = a;
   c -= b;
   assertEqualFloat(-1.0, c.value(), 0.001);
   assertEqualFloat(0.2, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.2, c.relError(), 0.001);
 
   c = b;
   c -= a;
   assertEqualFloat(1.0, c.value(), 0.001);
   assertEqualFloat(0.2, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.2, c.relError(), 0.001);
 
   c = a;
   c *= b;
@@ -323,19 +323,19 @@ unittest(test_basic_math_with_error_II)
   c *= a;
   assertEqualFloat(6.0, c.value(), 0.001);
   assertEqualFloat(0.5, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0833333, c.relError(), 0.001);
 
   c = a;
   c /= b;
   assertEqualFloat(0.666666, c.value(), 0.001);
   assertEqualFloat(0.0555, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0833333, c.relError(), 0.001);
 
   c = b;
   c /= a;
   assertEqualFloat(1.5, c.value(), 0.001);
   assertEqualFloat(0.125, c.error(), 0.001);
-  assertEqualFloat(0, c.relError(), 0.001);
+  assertEqualFloat(0.0833333, c.relError(), 0.001);
 }
 
 

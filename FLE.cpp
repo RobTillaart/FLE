@@ -11,7 +11,8 @@
 //  0.1.0  2020-12-23  arduino-CI + unit tests
 //  0.1.1  2021-05-27  fix arduino-lint
 //  0.1.2  2021-06-15  add negation + unit tests
-
+//                     add first comparisons + some experimental
+//
 
 
 #include "FLE.h"
@@ -118,29 +119,34 @@ FLE FLE::operator /= (const FLE &in)
 //
 bool FLE::operator == (const FLE &in)
 {
-  if (_v != in._v) return false;
-  if (_e != in._e) return false;
-  return true;
+  return ((_v == in._v) && (_e == in_e));
 }
 
 
 bool FLE::operator != (const FLE &in)
 {
-  if (_v != in._v) return true;
-  if (_e != in._e) return true;
-  return false;
+  return ((_v != in._v) || (_e != in_e));
 }
+
+
 
 
 /////////////////////////////////////////////////
 //
 // EXPERIMENTAL
 //
-// FLE FLE::both(FLE a, FLE b)
+bool FLE::operator ~= (const FLE &in)
+{
+  if (in.low() <= low() && in.high() >= low() ) return true;
+  if (low() <= in.low() && high() >= in.low() ) return true;
+  return false;
+}
+
+
+
+// bool FLE::in(FLE a)
 // {
-  // // put a.low() a.high b low b high in array
-  // // sort them and take the middle 2 
-  // return c();
+//   return ( a.low() <= low() && high <= a.high());
 // }
 
 

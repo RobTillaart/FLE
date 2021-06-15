@@ -51,28 +51,39 @@ class FLE: public Printable
   // BOOL OPERATORS
   bool operator == (const FLE&);
   bool operator != (const FLE&);
-  // FLE operator >= (const FLE&);
-  // FLE operator >  (const FLE&);
-  // FLE operator <= (const FLE&);
-  // FLE operator < (const FLE&);
+
+  //  bool operator >= (const FLE&);  // what does it mean
+  //  bool operator >  (const FLE&);
+  //  bool operator <= (const FLE&);
+  //  bool operator < (const FLE&);
 
 
-  // BOOL OPERATIONS fuzzy ones.
-  // FLE operator ~= (const FLE&);  // possible equal 
 
-  // FLE operator ~< (const FLE&);  // possible smaller
+  // EXPERIMENTAL - INVESTIGATE
+  //
+  bool operator ~= (const FLE&);      // possible equal 
+
+  bool in(FLE a);       //  FLE lies completely in range a
+
+
+  // bool operator ~< (const FLE&);  // possible smaller
   // there are possible values of a smaller than b
-
-  // FLE operator ~> (const FLE&);  // possible larger
+  // bool operator ~> (const FLE&);  // possible larger
   // there are possible values of a larger than b
 
-  // investigate set like math.
-  // FLE both(FLE a, FLE b);    // overlap.
-  // FLE sub(FLE a, FLE b);     // part of a lower than b;
-  // FLE sup(FLE a, FLE b);     // part of a higher than b;
+
+  // SET LIKE MATH
+  // FLE both(FLE a, FLE b);      // overlap.
+  // FLE sub(FLE a, FLE b);       // part of a lower than b;
+  // FLE sup(FLE a, FLE b);       // part of a higher than b;
+  // float both%(FLE a, FLE b);   // overlap percentage
+  // float sub%(FLE a, FLE b);    // part of a lower than b;
+  // float sup%(FLE a, FLE b);    // part of a higher than b;
+
+  // 
   //
-  // infinite
-  // NAN
+  // infinite ?
+  // NAN ?
 
 
   private:
