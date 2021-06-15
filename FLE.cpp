@@ -130,7 +130,7 @@ bool FLE::operator != (const FLE &in)
 // a >= a  fails
 bool FLE::operator >= (const FLE &in)
 {
-  return ((this == in) || (low() >= in.high()));
+  return ((*this == in) || (low() >= in.high()));
 }
 
 bool FLE::operator > (const FLE &in)
@@ -141,7 +141,7 @@ bool FLE::operator > (const FLE &in)
 // a <= a succeeds...
 bool FLE::operator <= (const FLE &in)
 {
-  return ((this == in) || (high() <= in.low()) );
+  return ((*this == in) || (high() <= in.low()) );
 }
 
 bool FLE::operator < (const FLE &in)
