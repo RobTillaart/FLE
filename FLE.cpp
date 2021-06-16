@@ -12,7 +12,7 @@
 //  0.1.1  2021-05-27  fix arduino-lint
 //  0.1.2  2021-06-15  add negation + unit tests
 //                     add first comparisons + some experimental
-//
+//  0.1.3  2021-06-16  add shared() 
 
 
 #include "FLE.h"
@@ -42,6 +42,8 @@ size_t FLE::printTo(Print& p) const
 //
 // MATH OPERATORS
 //
+
+#region math
 
 // NEGATION
 FLE FLE::operator - ()
@@ -112,11 +114,14 @@ FLE FLE::operator /= (const FLE &in)
   return *this;
 }
 
+#endregion
 
 /////////////////////////////////////////////////
 //
 // BOOL OPERATORS
 //
+
+#region bool
 bool FLE::operator == (const FLE &in)
 {
   return ((_v == in._v) && (_e == in._e));
@@ -137,7 +142,6 @@ bool FLE::operator > (const FLE &in)
   return low() > in.high();
 }
 
-
 // bool FLE::operator <= (const FLE &in)
 // {
   // return ((*this == in) || (high() <= in.low()) );
@@ -148,6 +152,8 @@ bool FLE::operator < (const FLE &in)
   return high() < in.low();
 }
 
+#endregion
+
 
 /////////////////////////////////////////////////
 //
@@ -157,6 +163,31 @@ bool FLE::in(FLE a)
 {
   return ( a.low() <= low() && high() <= a.high());
 }
+
+
+FLE FLE::shared(FLE a)
+{
+  float v, e;
+  // six possible cases.
+  if ((this < a) || (this > a)) return NULL;  // no overlap
+  if (a.in(this)) return a;
+  if (this.in(a)) return this;
+  if (a.low() < high())
+  {
+    v = (a.low() + high())/2;
+    e = v - a.low();
+  }
+  else
+  {
+    v = (low() + a.high())/2;
+    e = v - low();
+  }
+  return FLE(v, e);
+}
+
+
+
+
 
 
 

@@ -71,7 +71,8 @@ class FLE: public Printable
   bool pne (const FLE&);      // possible not equal
 
   // SET LIKE MATH
-  FLE shared(FLE b);      // overlap.
+  // returns NULL if no overlap
+  FLE shared(FLE b);      // overlap, common etc
 
 
 

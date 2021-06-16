@@ -375,16 +375,37 @@ unittest(test_bool)
 }
 
 
+unittest(test_misc)
+{
+  FLE a(2, 0.1);
+  FLE b(3, 0.9);
+  FLE c(3, 1.0);
+
+  fprintf("\nIN test\n");
+  assertFalse(a.in(b));
+  assertFalse(b.in(a));
+  assertFalse(b.in(c));
+  assertTrue(c.in(b));
+
+  FLE x = a.shared(b);
+  assertEqualFloat(2.1, x.value(), 0.001);
+  assertEqualFloat(0.0, x.error(), 0.001);
+
+  x = a.shared(c);
+  assertEqualFloat(2.05, x.value(), 0.001);
+  assertEqualFloat(0.05, x.error(), 0.001);
+
+  fprintf("\nNULL test\n");
+  assertNull(a.shared(b));
+  assertNull(b.shared(a));
+}
+
+
 unittest(test_experimental)
 {
   FLE a(2, 0.1);
   FLE b(3, 0.9);
   FLE c(3, 0.1);
-
-  assertFalse(a.in(b));
-  assertFalse(b.in(a));
-  assertFalse(b.in(c));
-  assertTrue(c.in(b));
 
   assertTrue(a.peq(a));
   assertTrue(a.peq(b));
@@ -394,7 +415,6 @@ unittest(test_experimental)
   assertFalse(c.peq(a));
   assertFalse(a.peq(c));
 }
-
 
 
 unittest_main()
