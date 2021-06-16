@@ -72,7 +72,7 @@ class FLE: public Printable
 
   // SET LIKE MATH
   // returns NULL if no overlap
-  FLE shared(FLE b);      // overlap, common etc
+  FLE shared(FLE a);      // overlap, common etc
 
 
 
