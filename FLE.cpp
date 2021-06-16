@@ -169,9 +169,9 @@ FLE FLE::shared(FLE a)
 {
   float v, e;
   // six possible cases.
-  if ((this < a) || (this > a)) return NULL;  // no overlap
+  if ((*this < a) || (*this > a)) return (FLE) NULL;  // no overlap
   if (a.in(this)) return a;
-  if (this.in(a)) return this;
+  if (this->in(a)) return *this;
   if (a.low() < high())
   {
     v = (a.low() + high())/2;
