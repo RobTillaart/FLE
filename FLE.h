@@ -49,27 +49,35 @@ class FLE: public Printable
 
 
   // BOOL OPERATORS
+  //  for all value pairs of a and b
   bool operator == (const FLE&);
   bool operator != (const FLE&);
-
-  //  for all value pairs of a and b    a >= b
-  bool operator >= (const FLE&);
   bool operator >  (const FLE&);
-  bool operator <= (const FLE&);
   bool operator <  (const FLE&);
+
+
+  // MISC OPERATORS
+  //  FLE lies completely in range a
+  //  meaning FLE is more precise than a => smaller error.
+  bool in(FLE a);
 
 
 
   // EXPERIMENTAL - INVESTIGATE
   //
+
   //  weak propositions.
   bool peq (const FLE&);      // possible equal 
   bool pne (const FLE&);      // possible not equal
 
+  // SET LIKE MATH
+  FLE shared(FLE b);      // overlap.
 
-  //  FLE lies completely in range a
-  //  meaning FLE is more precise than a
-  bool in(FLE a);
+
+
+  //  semantic meaning not 100% clear
+  //  bool operator >= (const FLE&);
+  //  bool operator <= (const FLE&);
 
 
   // bool plt (const FLE&);  // possible less than
@@ -80,9 +88,10 @@ class FLE: public Printable
 
 
   // SET LIKE MATH
-  // FLE both(FLE a, FLE b);      // overlap.
-  // FLE sub(FLE a, FLE b);       // part of a lower than b;
-  // FLE sup(FLE a, FLE b);       // part of a higher than b;
+  // FLE shared(FLE a, FLE b);      // overlap.
+  // FLE lower(FLE a, FLE b);     // part of a lower than b;
+  // FLE higher(FLE a, FLE b);    // part of a higher than b;
+
   // float both%(FLE a, FLE b);   // overlap percentage
   // float sub%(FLE a, FLE b);    // part of a lower than b;
   // float sup%(FLE a, FLE b);    // part of a higher than b;

@@ -127,27 +127,37 @@ bool FLE::operator != (const FLE &in)
   return ((_v != in._v) || (_e != in._e));
 }
 
-// a >= a  fails
-bool FLE::operator >= (const FLE &in)
-{
-  return ((*this == in) || (low() >= in.high()));
-}
+// bool FLE::operator >= (const FLE &in)
+// {
+  // return ((*this == in) || (low() >= in.high()));
+// }
 
 bool FLE::operator > (const FLE &in)
 {
   return low() > in.high();
 }
 
-// a <= a succeeds...
-bool FLE::operator <= (const FLE &in)
-{
-  return ((*this == in) || (high() <= in.low()) );
-}
+
+// bool FLE::operator <= (const FLE &in)
+// {
+  // return ((*this == in) || (high() <= in.low()) );
+// }
 
 bool FLE::operator < (const FLE &in)
 {
   return high() < in.low();
 }
+
+
+/////////////////////////////////////////////////
+//
+// MISC OPERATORS
+//
+bool FLE::in(FLE a)
+{
+  return ( a.low() <= low() && high() <= a.high());
+}
+
 
 
 /////////////////////////////////////////////////
@@ -161,11 +171,11 @@ bool FLE::peq(const FLE &in)
   return false;
 }
 
-
-bool FLE::in(FLE a)
+bool FLE::pne(const FLE &in)
 {
-  return ( a.low() <= low() && high() <= a.high());
+  return !(*this == in);
 }
+
 
 
 // -- END OF FILE --
