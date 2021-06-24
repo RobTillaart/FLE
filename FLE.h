@@ -51,6 +51,7 @@ class FLE: public Printable
   // BOOL OPERATORS
   //  for all value pairs of a and b
   bool operator == (const FLE&);
+  bool operator == (const FLE);
   bool operator != (const FLE&);
   bool operator >  (const FLE&);
   bool operator <  (const FLE&);
