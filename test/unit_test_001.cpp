@@ -381,7 +381,7 @@ unittest(test_misc)
   FLE b(3, 0.9);
   FLE c(3, 1.0);
 
-  fprintf("\nIN test\n");
+  fprintf(stderr, "\nIN test\n");
   assertFalse(a.in(b));
   assertFalse(b.in(a));
   assertFalse(b.in(c));
@@ -395,7 +395,7 @@ unittest(test_misc)
   assertEqualFloat(2.05, x.value(), 0.001);
   assertEqualFloat(0.05, x.error(), 0.001);
 
-  fprintf("\nNULL test\n");
+  fprintf(stderr, "\nNULL test\n");
   assertNull(a.shared(b));
   assertNull(b.shared(a));
 }
