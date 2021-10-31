@@ -390,10 +390,12 @@ unittest(test_misc)
   FLE x = a.shared(b);
   fprintf(stderr, "x.value: %f\n", x.value());
   fprintf(stderr, "x.error: %f\n", x.error());
-  // assertEqualFloat(2.1, x.value(), 0.001);
-  // assertEqualFloat(0.0, x.error(), 1);
+  assertEqualFloat(2.1, x.value(), 0.001);
+  assertEqualFloat(0.0, x.error(), 0.001);
 
   x = a.shared(c);
+  fprintf(stderr, "x.value: %f\n", x.value());
+  fprintf(stderr, "x.error: %f\n", x.error());
   assertEqualFloat(2.05, x.value(), 0.001);
   assertEqualFloat(0.05, x.error(), 0.001);
 
