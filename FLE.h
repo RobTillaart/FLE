@@ -63,7 +63,9 @@ class FLE: public Printable
   bool in(FLE a);
   // returns overlap == common part, or FLE(NAN, NAN) otherwise
   FLE shared(FLE a);
-
+  FLE lower(FLE a);     // part of this lower than a;
+  FLE higher(FLE a);    // part of this higher than a;
+  
 
   // EXPERIMENTAL - INVESTIGATE
   //  weak propositions.
@@ -75,21 +77,13 @@ class FLE: public Printable
   bool pge (const FLE&);      // possible greater equal
 
 
-
-
   //  semantic meaning not 100% clear
   //  bool operator >= (const FLE&);
   //  bool operator <= (const FLE&);
 
 
-
-
-
-
   // SET LIKE MATH
-  // FLE shared(FLE a, FLE b);      // overlap.
-  // FLE lower(FLE a, FLE b);     // part of a lower than b;
-  // FLE higher(FLE a, FLE b);    // part of a higher than b;
+
 
   // float both%(FLE a, FLE b);   // overlap percentage
   // float sub%(FLE a, FLE b);    // part of a lower than b;
