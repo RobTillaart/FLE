@@ -1,5 +1,7 @@
 
 [![Arduino CI](https://github.com/RobTillaart/FLE/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino-lint](https://github.com/RobTillaart/FLE/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/FLE/actions/workflows/arduino-lint.yml)
+[![JSON check](https://github.com/RobTillaart/FLE/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/FLE/actions/workflows/jsoncheck.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/FLE/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/FLE.svg?maxAge=3600)](https://github.com/RobTillaart/FLE/releases)
 
@@ -36,16 +38,16 @@ When the ± char does not print correctly, one could change the font.
 ### Functions
 
 - **FLE(val = 0, err = 0)** constructor, with default value and error set to 0.
-- **PrintTo(Print& p)** printable interface, define a stream to pritn to.  
-Format is "val ± err" see above (plusminus = char(0177))
-- **setDecimals(n)** will print the FLE bot val and err with n decimals.
+- **PrintTo(Print& p)** printable interface, define a stream to print to.  
+Format is "value ± error" see above (plusminus = char(0177))
+- **setDecimals(n)** will print the FLE both value and error with n decimals.
 - **setSeparator(char c)** overrules the standard ± char. (0177)
 - **value()** returns val part
 - **error()** return err part
 - **relError()** returns relative error, except when val == 0. 
 Then it return 0. Q: should this be "NaN
-- **high()** returns val + error margin (= max real value)
-- **low()** returns val - error margin (= min real value)
+- **high()** returns value + error margin (= max real value)
+- **low()** returns value - error margin (= min real value)
 
 furthermore the basic math is implemented, "+, -, *, /, +=, -=, *=, /="
 
@@ -69,3 +71,4 @@ furthermore the basic math is implemented, "+, -, *, /, +=, -=, *=, /="
 - negative numbers not tested yet
 
 See example
+
