@@ -177,11 +177,12 @@ FLE FLE::shared(FLE a)
   if (this->in(a)) return *this;
 
   // case 2
-  if (a.low() > high())
+  if (low() < a.low())
   {
     v = (a.low() + high())/2;
     e = v - a.low();
   }
+  // case 5
   else
   {
     v = (low() + a.high())/2;
