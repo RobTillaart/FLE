@@ -396,8 +396,10 @@ unittest(test_misc)
   assertEqualFloat(0.05, x.error(), 0.001);
 
   fprintf(stderr, "\nNAN test\n");
-  assertEqual(a.shared(b), FLE(NAN, NAN));
-  assertEqual(b.shared(a), FLE(NAN, NAN));
+  assertEqual(a.shared(b).value(), FLE(NAN, NAN).value());
+  assertEqual(a.shared(b).error(), FLE(NAN, NAN).error());
+  assertEqual(b.shared(a).value(), FLE(NAN, NAN).value());
+  assertEqual(b.shared(a).error(), FLE(NAN, NAN).error());
 }
 
 
