@@ -2,7 +2,7 @@
 //    FILE: FLE.cpp
 //  AUTHOR: Rob Tillaart
 //    DATE: 2020-07-21
-// VERSION: 0.1.2
+// VERSION: 0.1.3
 // PURPOSE: Arduino library for float with error datatype
 //     URL: https://github.com/RobTillaart/FLE
 //
@@ -118,10 +118,10 @@ FLE FLE::operator /= (const FLE &in)
 //
 // BOOL OPERATORS
 //
-bool FLE::operator == (const FLE in)
-{
-  return ((_v == in._v) && (_e == in._e));
-}
+// bool FLE::operator == (const FLE in)
+//{
+//  return ((_v == in._v) && (_e == in._e));
+//}
 
 bool FLE::operator == (const FLE &in)
 {
