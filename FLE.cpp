@@ -225,25 +225,25 @@ bool FLE::pne(const FLE &in)
 // possible less than
 bool FLE::plt(const FLE &in)
 {
-  return (*this.low() < in.low());
+  return (*this->low() < in.low());
 }
 
 // possible less equal
 bool FLE::ple(const FLE &in)
 {
-  return (*this.low() <= in.low());  // TODO
+  return (*this->low() <= in.low());  // TODO
 }
 
 // possible greater than
 bool FLE::pgt(const FLE &in)
 {
-  return (*this.high() > in.high());
+  return (*this->high() > in.high());
 }
 
 // possible greater equal
 bool FLE::pge(const FLE &in)
 {
-  return (*this.high() >= in.high());  // TODO
+  return (*this->high() >= in.high());  // TODO
 }
 
 
