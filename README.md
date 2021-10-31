@@ -52,6 +52,24 @@ Then it return 0. Q: should this be "NaN
 furthermore the basic math is implemented, "+, -, *, /, +=, -=, *=, /="
 
 
+#### Set like functions
+
+- **bool in(FLE y)** x.in(y) returns true if x lies completely in y  (range is a subset)
+- **FLE shared(FLE y)** returns the overlapping range. 
+
+
+#### Weal propositions
+
+Experimental.
+
+- **bool peq(FLE &y)** possible equal.
+- **bool pne(FLE &y)** possible not equal.
+- **bool plt(FLE &y)** possible less than.
+- **bool ple(FLE &y)** possible less equal.
+- **bool pgt(FLE &y)** possible greater than.
+- **bool pge(FLE &y)** possible greater equal.
+
+
 ## Todo
 
 - comparison (investigate, what means equal or less than ..)

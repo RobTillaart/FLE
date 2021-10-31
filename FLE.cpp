@@ -192,15 +192,23 @@ FLE FLE::shared(FLE a)
 }
 
 
+FLE FLE::lower(FLE a)
+{
+  return FLE(0,0);   // TODO
+}
 
 
-
+FLE FLE::higher(FLE a)
+{
+  return FLE(0,0);   // TODO 
+}
 
 
 /////////////////////////////////////////////////
 //
-// EXPERIMENTAL
+// WEAK PROPOSITIONS
 //
+// possible equal 
 bool FLE::peq(const FLE &in)
 {
   if (in.low() <= low() && in.high() >= low() ) return true;
@@ -208,9 +216,34 @@ bool FLE::peq(const FLE &in)
   return false;
 }
 
+// possible not equal
 bool FLE::pne(const FLE &in)
 {
   return !(*this == in);
+}
+
+// possible less than
+bool FLE::plt(const FLE &in)
+{
+  return true;  // TODO
+}
+
+// possible less equal
+bool FLE::ple(const FLE &in)
+{
+  return true;  // TODO
+}
+
+// possible greater than
+bool FLE::pgt(const FLE &in)
+{
+  return true;  // TODO
+}
+
+// possible greater equal
+bool FLE::pge(const FLE &in)
+{
+  return true;  // TODO
 }
 
 

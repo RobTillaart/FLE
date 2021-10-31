@@ -61,19 +61,19 @@ class FLE: public Printable
   //  FLE lies completely in range a
   //  meaning FLE is more precise than a => smaller error.
   bool in(FLE a);
-
+  // returns overlap == common part, or FLE(NAN, NAN) otherwise
+  FLE shared(FLE a);
 
 
   // EXPERIMENTAL - INVESTIGATE
-  //
-
   //  weak propositions.
   bool peq (const FLE&);      // possible equal 
   bool pne (const FLE&);      // possible not equal
+  bool plt (const FLE&);      // possible less than
+  bool ple (const FLE&);      // possible less equal
+  bool pgt (const FLE&);      // possible greater than
+  bool pge (const FLE&);      // possible greater equal
 
-  // SET LIKE MATH
-  // returns NULL if no overlap
-  FLE shared(FLE a);      // overlap, common etc
 
 
 
@@ -82,10 +82,7 @@ class FLE: public Printable
   //  bool operator <= (const FLE&);
 
 
-  // bool plt (const FLE&);  // possible less than
-  // bool ple (const FLE&);  // possible less equal
-  // bool pgt (const FLE&);  // possible greater than
-  // bool pge (const FLE&);  // possible greater equal
+
 
 
 
