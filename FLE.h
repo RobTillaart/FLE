@@ -69,12 +69,12 @@ class FLE: public Printable
 
   // EXPERIMENTAL - INVESTIGATE
   //  weak propositions.
-  bool peq (const FLE&);      // possible equal 
-  bool pne (const FLE&);      // possible not equal
-  bool plt (const FLE&);      // possible less than
-  bool ple (const FLE&);      // possible less equal
-  bool pgt (const FLE&);      // possible greater than
-  bool pge (const FLE&);      // possible greater equal
+  bool peq (const FLE& a);      // possible equal 
+  bool pne (const FLE& a);      // possible not equal
+  bool plt (const FLE& a);      // possible less than
+  bool ple (const FLE& a);      // possible less equal
+  bool pgt (const FLE& a);      // possible greater than
+  bool pge (const FLE& a);      // possible greater equal
 
 
   //  semantic meaning not 100% clear

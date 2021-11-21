@@ -206,44 +206,44 @@ FLE FLE::higher(FLE a)
 
 /////////////////////////////////////////////////
 //
-// WEAK PROPOSITIONS
+// WEAK PROPOSITIONS    TODO  elaborate
 //
 // possible equal 
-bool FLE::peq(const FLE &in)
+bool FLE::peq(const FLE &a)
 {
-  if (in.low() <= low() && in.high() >= low() ) return true;
-  if (low() <= in.low() && high() >= in.low() ) return true;
+  if (a.low() <= low() && a.high() >= low() ) return true;
+  if (low() <= a.low() && high() >= a.low() ) return true;
   return false;
 }
 
 // possible not equal
-bool FLE::pne(const FLE &in)
+bool FLE::pne(const FLE &a)
 {
-  return !(*this == in);
+  return !(*this == a);
 }
 
 // possible less than
-bool FLE::plt(const FLE &in)
+bool FLE::plt(const FLE &a)
 {
-  return (this->low() < in.low());
+  return (this->low() < a.low());  // TODO
 }
 
 // possible less equal
-bool FLE::ple(const FLE &in)
+bool FLE::ple(const FLE &a)
 {
-  return (this->low() <= in.low());  // TODO
+  return (this->low() <= a.low());  // TODO
 }
 
 // possible greater than
-bool FLE::pgt(const FLE &in)
+bool FLE::pgt(const FLE &a)
 {
-  return (this->high() > in.high());
+  return (this->high() > a.high());
 }
 
 // possible greater equal
-bool FLE::pge(const FLE &in)
+bool FLE::pge(const FLE &a)
 {
-  return (this->high() >= in.high());  // TODO
+  return (this->high() >= a.high());  // TODO
 }
 
 

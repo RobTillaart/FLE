@@ -39,17 +39,17 @@ When the ± char does not print correctly, one could change the font.
 
 - **FLE(val = 0, err = 0)** constructor, with default value and error set to 0.
 - **PrintTo(Print& p)** printable interface, define a stream to print to.  
-Format is "value ± error" see above (plusminus = char(0177))
+Format is "value ± error" see above (plus-minus ± = char(0177))
 - **setDecimals(n)** will print the FLE both value and error with n decimals.
 - **setSeparator(char c)** overrules the standard ± char. (0177)
-- **value()** returns val part
-- **error()** return err part
-- **relError()** returns relative error, except when val == 0. 
-Then it return 0. Q: should this be "NaN
-- **high()** returns value + error margin (= max real value)
-- **low()** returns value - error margin (= min real value)
+- **value()** returns value part.
+- **error()** return error part.
+- **relError()** returns relative error, except when value == 0. 
+Then the function returns 0. Q: should this be "NaN" ?
+- **high()** returns value + error margin (= max real value).
+- **low()** returns value - error margin (= min real value).
 
-furthermore the basic math is implemented, "+, -, *, /, +=, -=, *=, /="
+Furthermore the basic math is implemented, "+, -, \*, /, +=, -=, \*=, /="
 
 
 #### Set like functions
