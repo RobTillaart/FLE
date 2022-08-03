@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/FLE/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/RobTillaart/FLE.svg?maxAge=3600)](https://github.com/RobTillaart/FLE/releases)
 
+
 # FLE
 
 Arduino library for Arduino library for float with error datatype
@@ -58,7 +59,7 @@ Furthermore the basic math is implemented, "+, -, \*, /, +=, -=, \*=, /="
 - **FLE shared(FLE y)** returns the overlapping range. 
 
 
-#### Weal propositions
+#### Weak propositions
 
 Experimental.
 
@@ -72,6 +73,7 @@ Experimental.
 
 ## Todo
 
+- update documentation
 - comparison (investigate, what means equal or less than ..)
 - functions log, exp,
 - functions sqr, sqrt, pow

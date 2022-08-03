@@ -1,6 +1,6 @@
 {
   "name": "FLE",
-  "keywords": "float, error, ",
+  "keywords": "float, error ",
   "description": "Arduino library for FLE = FLoat with Error datatype",
   "authors":
   [
