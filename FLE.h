@@ -83,7 +83,9 @@ class FLE: public Printable
 
 
   // SET LIKE MATH
-
+  // FLE shared(FLE a, FLE b);      // overlap.
+  // FLE lower(FLE a, FLE b);     // part of a lower than b;
+  // FLE higher(FLE a, FLE b);    // part of a higher than b;
 
   // float both%(FLE a, FLE b);   // overlap percentage
   // float sub%(FLE a, FLE b);    // part of a lower than b;

@@ -30,6 +30,7 @@
 
 unittest_setup()
 {
+  fprintf(stderr, "FLE_LIB_VERSION: %s\n", (char*) FLE_LIB_VERSION);
 }
 
 

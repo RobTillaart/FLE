@@ -43,7 +43,6 @@ size_t FLE::printTo(Print& p) const
 // MATH OPERATORS
 //
 
-
 // NEGATION
 FLE FLE::operator - ()
 {
@@ -143,6 +142,7 @@ bool FLE::operator > (const FLE &in)
   return low() > in.high();
 }
 
+
 // bool FLE::operator <= (const FLE &in)
 // {
   // return ((*this == in) || (high() <= in.low()) );
@@ -152,7 +152,6 @@ bool FLE::operator < (const FLE &in)
 {
   return high() < in.low();
 }
-
 
 
 /////////////////////////////////////////////////
