@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - no functional changes
 
 
-## [0.1.10  2022-04-15
+## [0.1.10] - 2022-04-15
 - fix #12 
 - split .h in .h and .cpp Needed in case of more complex projects.
 
